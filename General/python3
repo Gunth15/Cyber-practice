@@ -1,0 +1,16 @@
+100100011001011101100110110011011110100000101011111011111110010110110011001000100001
+import sys
+
+#user input given as command line argument turned into integer of full binary
+binary = int(sys.argv[1])
+
+#number of bytes(8 length of 8-bit groupings)
+by = binary.bit_length()+7//8
+
+#array representation of bytes 
+byte_array = binary.to_bytes(by,byteorder='big',signed=False)
+
+#decodes bytes to ascii
+print(byte_array.decode(encoding='ascii',errors='strict'))
+
+
